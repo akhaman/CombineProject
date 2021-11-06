@@ -21,6 +21,8 @@
 		DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */; };
 		DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */; };
 		DE8A804D273700EA009A5B63 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */; };
+		DE8A80502737074F009A5B63 /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804F2737074F009A5B63 /* AnimalsView.swift */; };
+		DE8A805327370875009A5B63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE8A805227370875009A5B63 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsProvider.swift; sourceTree = "<group>"; };
 		DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
 		DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		DE8A804F2737074F009A5B63 /* AnimalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8A805327370875009A5B63 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +114,7 @@
 				DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */,
 				DE8A8029273586C4009A5B63 /* AnimalsViewController.swift */,
 				DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */,
+				DE8A804F2737074F009A5B63 /* AnimalsView.swift */,
 			);
 			path = Animals;
 			sourceTree = "<group>";
@@ -139,6 +144,9 @@
 			dependencies = (
 			);
 			name = CombineProject;
+			packageProductDependencies = (
+				DE8A805227370875009A5B63 /* SnapKit */,
+			);
 			productName = CombineProject;
 			productReference = DE8A8022273586C4009A5B63 /* CombineProject.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +175,9 @@
 				Base,
 			);
 			mainGroup = DE8A8019273586C4009A5B63;
+			packageReferences = (
+				DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DE8A8023273586C4009A5B63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8A80502737074F009A5B63 /* AnimalsView.swift in Sources */,
 				DE8A803F27360F88009A5B63 /* DogImageUrlsRepository.swift in Sources */,
 				DE8A803A2735F19C009A5B63 /* Networker.swift in Sources */,
 				DE8A802A273586C4009A5B63 /* AnimalsViewController.swift in Sources */,
@@ -424,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE8A805227370875009A5B63 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE8A801A273586C4009A5B63 /* Project object */;
 }

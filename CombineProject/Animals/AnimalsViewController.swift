@@ -9,9 +9,13 @@ import UIKit
 import Combine
 
 class AnimalsViewController: UIViewController {
-
+    
     private let provider: AnimalsProviderProtocol
     private var subscriptions = Set<AnyCancellable>()
+    
+    // MARK: - Subviews
+    
+    private lazy var animalsView = AnimalsView()
     
     // MARK: - Initialization
     
@@ -26,6 +30,10 @@ class AnimalsViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
+    
+    override func loadView() {
+        view = animalsView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
