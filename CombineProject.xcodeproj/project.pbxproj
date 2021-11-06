@@ -19,6 +19,7 @@
 		DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804127361207009A5B63 /* NavigationBar.swift */; };
 		DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */; };
 		DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */; };
+		DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DE8A804127361207009A5B63 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsAssembly.swift; sourceTree = "<group>"; };
 		DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsProvider.swift; sourceTree = "<group>"; };
+		DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		DE8A8024273586C4009A5B63 /* CombineProject */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A80492736F81A009A5B63 /* UIKit+Combine */,
 				DE8A804327361222009A5B63 /* Animals */,
 				DE8A8040273611D6009A5B63 /* Components */,
 				DE8A803D27360F56009A5B63 /* Api */,
@@ -107,6 +110,14 @@
 				DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */,
 			);
 			path = Animals;
+			sourceTree = "<group>";
+		};
+		DE8A80492736F81A009A5B63 /* UIKit+Combine */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */,
+			);
+			path = "UIKit+Combine";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				DE8A8026273586C4009A5B63 /* AppDelegate.swift in Sources */,
 				DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */,
 				DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */,
+				DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */,
 				DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */,
 				DE8A803C27360273009A5B63 /* CatFactsRepository.swift in Sources */,
 				DE8A8028273586C4009A5B63 /* SceneDelegate.swift in Sources */,

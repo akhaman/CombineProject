@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class AnimalsViewController: UIViewController {
 
     private let provider: AnimalsProviderProtocol
+    private var subscriptions = Set<AnyCancellable>()
+    private var textField: UITextField!
+    private lazy var resetButton = UIBarButtonItem(title: "Reset")
     
     // MARK: - Initialization
     
@@ -27,7 +31,19 @@ class AnimalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        setupView()
+        bindViews()
+    }
+    
+    private func setupView() {
+        title = "Cats and dogs"
+        view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = resetButton
+    }
+    
+    private func bindViews() {
+        resetButton.publisher
+            .sink { _ in print("reset did tap") }
+            .store(in: &subscriptions)
     }
 }
-
