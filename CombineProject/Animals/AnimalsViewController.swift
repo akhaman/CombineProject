@@ -12,7 +12,6 @@ class AnimalsViewController: UIViewController {
 
     private let provider: AnimalsProviderProtocol
     private var subscriptions = Set<AnyCancellable>()
-    private var textField: UITextField!
     
     // MARK: - Initialization
     
@@ -41,6 +40,5 @@ class AnimalsViewController: UIViewController {
     }
     
     private func bindViews() {
-        
     }
 }

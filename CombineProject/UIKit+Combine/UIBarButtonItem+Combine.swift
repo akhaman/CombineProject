@@ -41,7 +41,7 @@ extension UIBarButtonItem {
     }
 }
 
-// MARK: - UIBarButtonItemPublisher
+// MARK: - UIBarButtonItem.Publisher
 
 extension UIBarButtonItem {
     
@@ -62,7 +62,7 @@ extension UIBarButtonItem {
     }
 }
 
-// MARK: - UIBarButtonItemSubscription
+// MARK: - UIBarButtonItem.Subscription
 
 extension UIBarButtonItem {
     

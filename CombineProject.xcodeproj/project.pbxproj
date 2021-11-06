@@ -20,6 +20,7 @@
 		DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */; };
 		DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */; };
 		DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */; };
+		DE8A804D273700EA009A5B63 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsAssembly.swift; sourceTree = "<group>"; };
 		DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsProvider.swift; sourceTree = "<group>"; };
 		DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
+		DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */,
+				DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */,
 			);
 			path = "UIKit+Combine";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				DE8A8026273586C4009A5B63 /* AppDelegate.swift in Sources */,
 				DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */,
 				DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */,
+				DE8A804D273700EA009A5B63 /* UIControl+Combine.swift in Sources */,
 				DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */,
 				DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */,
 				DE8A803C27360273009A5B63 /* CatFactsRepository.swift in Sources */,
