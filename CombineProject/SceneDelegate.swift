@@ -18,8 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let viewController = ViewController()
-        window.rootViewController = viewController
+        let navigationController = UINavigationController(navigationBarClass: NavigationBar.self, toolbarClass: nil)
+        let viewController = AnimalsAssembly.assemble()
+        navigationController.pushViewController(viewController, animated: false)
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 }
