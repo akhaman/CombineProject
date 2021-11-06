@@ -10,15 +10,24 @@ import SnapKit
 
 class AnimalsView: UIView {
     
-    enum Segment: String, CaseIterable {
-        case cats = "Cats"
-        case dogs = "Dogs"
+    enum Segment: Int, CaseIterable {
+        case cats
+        case dogs
+        
+        var name: String {
+            switch self {
+            case .cats:
+                return "Cats"
+            case .dogs:
+                return "Dogs"
+            }
+        }
     }
 
     // MARK: - Subviews
     
-    private lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: Segment.allCases.map(\.rawValue))
+    private(set) lazy var segmentedControl: UISegmentedControl = {
+        let control = UISegmentedControl(items: Segment.allCases.map(\.name))
         control.selectedSegmentIndex = 0
         return control
     }()
@@ -32,14 +41,14 @@ class AnimalsView: UIView {
         return view
     }()
     
-    private lazy var contentImageView: UIImageView = {
+    private(set) lazy var contentImageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         return view
     }()
     
-    private lazy var contentLabel: UILabel = {
+    private(set) lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.text = "Content"
         label.font = .systemFont(ofSize: 16, weight: .medium)
@@ -48,7 +57,7 @@ class AnimalsView: UIView {
         return label
     }()
     
-    private lazy var moreButton: UIButton = {
+    private(set) lazy var moreButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("more", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -58,7 +67,7 @@ class AnimalsView: UIView {
         return button
     }()
     
-    private lazy var scoreLabel: UILabel = {
+    private(set) lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .center

@@ -48,5 +48,6 @@ class AnimalsViewController: UIViewController {
     }
     
     private func bindViews() {
+        
     }
 }
