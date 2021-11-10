@@ -24,6 +24,7 @@
 		DE8A80502737074F009A5B63 /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804F2737074F009A5B63 /* AnimalsView.swift */; };
 		DE8A805327370875009A5B63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE8A805227370875009A5B63 /* SnapKit */; };
 		DE8A805527371C35009A5B63 /* CombineCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A805427371C35009A5B63 /* CombineCompatible.swift */; };
+		DE8A80592738426C009A5B63 /* AnimalsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A80582738426C009A5B63 /* AnimalsModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 		DE8A804F2737074F009A5B63 /* AnimalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
 		DE8A805427371C35009A5B63 /* CombineCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCompatible.swift; sourceTree = "<group>"; };
+		DE8A80582738426C009A5B63 /* AnimalsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				DE8A8029273586C4009A5B63 /* AnimalsViewController.swift */,
 				DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */,
 				DE8A804F2737074F009A5B63 /* AnimalsView.swift */,
+				DE8A80582738426C009A5B63 /* AnimalsModels.swift */,
 			);
 			path = Animals;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				DE8A805527371C35009A5B63 /* CombineCompatible.swift in Sources */,
 				DE8A803A2735F19C009A5B63 /* Networker.swift in Sources */,
 				DE8A802A273586C4009A5B63 /* AnimalsViewController.swift in Sources */,
+				DE8A80592738426C009A5B63 /* AnimalsModels.swift in Sources */,
 				DE8A8026273586C4009A5B63 /* AppDelegate.swift in Sources */,
 				DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */,
 				DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */,

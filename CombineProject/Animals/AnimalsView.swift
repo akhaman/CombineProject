@@ -16,10 +16,8 @@ class AnimalsView: UIView {
         
         var name: String {
             switch self {
-            case .cats:
-                return "Cats"
-            case .dogs:
-                return "Dogs"
+            case .cats: return "Cats"
+            case .dogs: return "Dogs"
             }
         }
     }
@@ -72,7 +70,6 @@ class AnimalsView: UIView {
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Score: 5 cats and 11 dogs"
         return label
     }()
   

@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import UIKit
 
 protocol DogImageUrlsRepositoryProtocol {
-    func getImage() -> AnyPublisher<URL, Error>
+    func getImage() -> AnyPublisher<UIImage, Error>
 }
 
 class DogImageUrlsRepository {
@@ -25,9 +26,11 @@ class DogImageUrlsRepository {
 
 extension DogImageUrlsRepository: DogImageUrlsRepositoryProtocol {
     
-    func getImage() -> AnyPublisher<URL, Error> {
+    func getImage() -> AnyPublisher<UIImage, Error> {
         networker.request(Dog.self, url: URL(string: "https://dog.ceo/api/breeds/image/random")!)
             .map(\.url)
+            .flatMap { [unowned self] in networker.request(Data.self, url: $0) }
+            .compactMap(UIImage.init(data:))
             .eraseToAnyPublisher()
     }
 }
