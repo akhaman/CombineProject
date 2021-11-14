@@ -16,6 +16,7 @@ class AnimalsViewController: UIViewController {
     // MARK: - Subviews
     
     private lazy var animalsView = AnimalsView()
+    private lazy var resetButton = UIBarButtonItem(title: "Reset")
     
     // MARK: - Initialization
     
@@ -37,16 +38,42 @@ class AnimalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        bindViews()
+        setup()
+        bindViewsInput()
+        bindProvidersOutput()
+        animalsView.update(selectedSegment: .cats)
+        provider.load(initialSegment: .cats)
     }
     
-    private func setupView() {
+    private func setup() {
         title = "Cats and dogs"
-        view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Reset", storeIn: &subscriptions) { print("didTap") }
+        navigationItem.rightBarButtonItem = resetButton
     }
     
-    private func bindViews() {
+    // MARK: - Bindings
+    
+    private func bindViewsInput() {
+        let resetPublisher = resetButton
+            .publisher
+            .map { _ in () }
+            .eraseToAnyPublisher()
+        
+        let input = Animals.Input(
+            loadMore: animalsView.loadMorePublisher,
+            segmentChanged: animalsView.segmentPublisher,
+            reset: resetPublisher
+        )
+        
+        provider.bind(input: input)
+    }
+    
+    private func bindProvidersOutput() {
+        provider.outputPublisher
+            .receive(on: RunLoop.main)
+            .sink { [weak self] output in
+                self?.animalsView.update(score: output.score)
+                self?.animalsView.update(contentState: output.content)
+            }
+            .store(in: &subscriptions)
     }
 }

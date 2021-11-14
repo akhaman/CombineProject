@@ -8,10 +8,13 @@
 import UIKit
 import Combine
 
-// MARK: - UIControl + Publisher
+// MARK: - UIControl + CombineCompatible
 
-extension UIControl {
-    func publisher(for event: Event) -> Publisher {
+extension UIControl: CombineCompatible {}
+
+extension CombineCompatible where Self: UIControl {
+    
+    func publisher(for event: UIControl.Event) -> Publisher<Self> {
         Publisher(control: self, event: event)
     }
 }
@@ -20,14 +23,14 @@ extension UIControl {
 
 extension UIControl {
     
-    struct Publisher: Combine.Publisher {
-        typealias Output = UIControl
+    struct Publisher<Control: UIControl>: Combine.Publisher {
+        typealias Output = Control
         typealias Failure = Never
         
-        let control: UIControl
+        let control: Control
         let event: Event
         
-        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, UIControl == S.Input {
+        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Control == S.Input {
             let subscription = Subscription(subscriber: subscriber, control: control, event: event)
             subscriber.receive(subscription: subscription)
         }

@@ -7,19 +7,15 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class AnimalsView: UIView {
     
-    enum Segment: String, CaseIterable {
-        case cats = "Cats"
-        case dogs = "Dogs"
-    }
-
     // MARK: - Subviews
     
     private lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: Segment.allCases.map(\.rawValue))
-        control.selectedSegmentIndex = 0
+        let items = Animals.Segment.allCases.map(\.name)
+        let control = UISegmentedControl(items: items)
         return control
     }()
     
@@ -30,6 +26,16 @@ class AnimalsView: UIView {
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 1
         return view
+    }()
+    
+    private lazy var moreButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("more", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
+        button.backgroundColor = .init(red: 255/255, green: 155/255, blue: 138/255, alpha: 1)
+        button.layer.masksToBounds = true
+        return button
     }()
     
     private lazy var contentImageView: UIImageView = {
@@ -48,14 +54,10 @@ class AnimalsView: UIView {
         return label
     }()
     
-    private lazy var moreButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("more", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
-        button.backgroundColor = .init(red: 255/255, green: 155/255, blue: 138/255, alpha: 1)
-        button.layer.masksToBounds = true
-        return button
+    private lazy var loader: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.hidesWhenStopped = true
+        return indicator
     }()
     
     private lazy var scoreLabel: UILabel = {
@@ -63,10 +65,9 @@ class AnimalsView: UIView {
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Score: 5 cats and 11 dogs"
         return label
     }()
-  
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -84,9 +85,12 @@ class AnimalsView: UIView {
         super.layoutSubviews()
         moreButton.layer.cornerRadius = moreButton.frame.height / 2
     }
+    
     // MARK: - Initial Configuration
     
     private func setup() {
+        backgroundColor = .white
+        
         addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide.snp.top).inset(27)
@@ -117,13 +121,74 @@ class AnimalsView: UIView {
         
         contentView.addSubview(contentImageView)
         contentImageView.snp.makeConstraints {
-            $0.center.edges.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         contentView.addSubview(contentLabel)
         contentLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.edges.edges.equalToSuperview().inset(16)
+            $0.edges.equalToSuperview().inset(16)
         }
+        
+        contentView.addSubview(loader)
+        loader.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+    }
+}
+
+// MARK: - AnimalsView Publishers
+
+extension AnimalsView {
+    
+    var segmentPublisher: AnyPublisher<Animals.Segment, Never> {
+        segmentedControl
+            .publisher(for: .valueChanged)
+            .compactMap { Animals.Segment(rawValue: $0.selectedSegmentIndex) }
+            .eraseToAnyPublisher()
+    }
+    
+    var loadMorePublisher: AnyPublisher<Animals.Segment, Never> {
+        moreButton
+            .publisher(for: .touchUpInside)
+            .compactMap { [unowned self] _ in Animals.Segment(rawValue: segmentedControl.selectedSegmentIndex) }
+            .eraseToAnyPublisher()
+    }
+}
+
+// MARK: - AnimalsView Updating
+
+extension AnimalsView {
+    
+    func update(score: String) {
+        scoreLabel.text = score
+    }
+    
+    func update(contentState: Animals.ContentState) {
+        
+        switch contentState {
+        case .initial:
+            contentLabel.hide()
+            contentImageView.hide()
+            loader.stopAnimating()
+        case .loading:
+            contentLabel.hide()
+            contentImageView.hide()
+            loader.startAnimating()
+        case .cats(let fact):
+            contentLabel.text = fact
+            contentLabel.show()
+            contentImageView.hide()
+            loader.stopAnimating()
+        case .dogs(let image):
+            contentImageView.image = image
+            contentImageView.show()
+            contentLabel.hide()
+            loader.stopAnimating()
+        }
+    }
+    
+    func update(selectedSegment: Animals.Segment) {
+        segmentedControl.selectedSegmentIndex = selectedSegment.rawValue
     }
 }

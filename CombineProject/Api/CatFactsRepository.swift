@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol CatFactsRepositoryProtocol {
-    func getFact() -> AnyPublisher<String, Error>
+    func getCatFact() -> AnyPublisher<String, Error>
 }
 
 class CatFactsRepository {
@@ -25,7 +25,7 @@ class CatFactsRepository {
 
 extension CatFactsRepository: CatFactsRepositoryProtocol {
     
-    func getFact() -> AnyPublisher<String, Error> {
+    func getCatFact() -> AnyPublisher<String, Error> {
         networker.request(Cat.self, url: URL(string: "https://catfact.ninja/fact")!)
             .map(\.fact)
             .eraseToAnyPublisher()
@@ -37,6 +37,5 @@ extension CatFactsRepository: CatFactsRepositoryProtocol {
 extension CatFactsRepository {
     private struct Cat: Decodable {
         let fact: String
-        let length: Int
     }
 }

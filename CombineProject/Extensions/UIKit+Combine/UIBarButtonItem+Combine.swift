@@ -8,19 +8,17 @@
 import UIKit
 import Combine
 
-// MARK: - UIBarButtonItem + Publisher
+// MARK: - UIBarButtonItem + CombineCompatible
 
-extension UIBarButtonItem {
+extension UIBarButtonItem: CombineCompatible {}
+
+extension CombineCompatible where Self: UIBarButtonItem {
+  
     var publisher: Publisher {
         Publisher(item: self)
     }
-}
-
-// MARK: - UIBarButton + Convience Initialization
-
-extension UIBarButtonItem {
     
-    convenience init(
+    init(
         title: String,
         style: Style = .plain,
         storeIn cancellables: inout Set<AnyCancellable>,
@@ -30,7 +28,7 @@ extension UIBarButtonItem {
         publisher.sink { _ in action() }.store(in: &cancellables)
     }
     
-    convenience init(
+    init(
         image: UIImage,
         style: Style = .plain,
         storeIn cancellables: inout Set<AnyCancellable>,
