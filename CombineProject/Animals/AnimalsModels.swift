@@ -11,22 +11,38 @@ import UIKit
 
 enum Animals {
     
+    enum Segment: Int, CaseIterable {
+        case cats
+        case dogs
+    }
+    
     struct Input {
-        let loadMore: AnyPublisher<Void, Never>
-        let segmentChanged: AnyPublisher<AnimalsView.Segment, Never>
+        let loadMore: AnyPublisher<Segment, Never>
+        let segmentChanged: AnyPublisher<Segment, Never>
         let reset: AnyPublisher<Void, Never>
     }
     
     struct Output {
-        let segmentState: SegmentState
-        let scoreState: String
+        let score: String
+        let content: ContentState
+    }
+    
+    enum ContentState {
+        case initial
+        case loading
+        case cats(fact: String)
+        case dogs(image: UIImage)
     }
 }
 
-extension Animals.Output {
+extension Animals.Segment {
     
-    enum SegmentState {
-        case cats(fact: String?)
-        case dogs(image: UIImage?)
+    var name: String {
+        switch self {
+        case .cats:
+            return "Cats"
+        case .dogs:
+            return "Dogs"
+        }
     }
 }
