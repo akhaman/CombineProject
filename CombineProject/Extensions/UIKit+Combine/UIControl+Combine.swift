@@ -41,7 +41,7 @@ extension UIControl {
 extension UIControl {
     
     fileprivate final class Subscription<S: Subscriber, Control: UIControl>: Combine.Subscription where S.Input == Control {
-
+        
         private var subscriber: S?
         private let control: Control
         private let event: Event

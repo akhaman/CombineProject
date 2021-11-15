@@ -20,7 +20,7 @@ class AnimalsProvider {
     // MARK: - Dependencies
     
     private let catFactsRepository: CatFactsRepositoryProtocol
-    private let dogImageUrsRepository: DogImageUrlsRepositoryProtocol
+    private let dogImagesRepository: DogImagesRepositoryProtocol
     
     // MARK: - Internal State
     
@@ -28,43 +28,43 @@ class AnimalsProvider {
     private var cats: [String] = []
     private var selectedSegment: Animals.Segment?
     
-    private lazy var outputSubject = CurrentValueSubject<Animals.Output, Never>(output(withState: .initial))
+    private lazy var outputSubject = PassthroughSubject<Animals.Output, Never>()
     
     private var viewsSubscriptions = Set<AnyCancellable>()
     private var loadingSubscription: AnyCancellable?
     
     // MARK: - Initialization
     
-    init(catFactsRepository: CatFactsRepositoryProtocol, dogImageUrsRepository: DogImageUrlsRepositoryProtocol) {
+    init(catFactsRepository: CatFactsRepositoryProtocol, dogImagesRepository: DogImagesRepositoryProtocol) {
         self.catFactsRepository = catFactsRepository
-        self.dogImageUrsRepository = dogImageUrsRepository
+        self.dogImagesRepository = dogImagesRepository
     }
     
     private func loadDogs() {
         loadingSubscription?.cancel()
         
-        outputSubject.value = output(withState: .loading)
+        outputSubject.send(output(withState: .loading))
         
-        loadingSubscription = dogImageUrsRepository.getDogImage()
+        loadingSubscription = dogImagesRepository.getDogImage()
             .sink { _ in
             } receiveValue: { [weak self] image in
                 guard let self = self else { return }
                 self.dogs.append(image)
-                self.outputSubject.value = self.output(withState: .dogs(image: image))
+                self.outputSubject.send(self.output(withState: .dogs(image: image)))
             }
     }
     
     private func loadCats() {
         loadingSubscription?.cancel()
         
-        outputSubject.value = output(withState: .loading)
+        outputSubject.send(output(withState: .loading))
         
         loadingSubscription = catFactsRepository.getCatFact()
             .sink { _ in
             } receiveValue: { [weak self] fact in
                 guard let self = self else { return }
                 self.cats.append(fact)
-                self.outputSubject.value = self.output(withState: .cats(fact: fact))
+                self.outputSubject.send(self.output(withState: .cats(fact: fact)))
             }
     }
 
@@ -102,10 +102,10 @@ extension AnimalsProvider: AnimalsProviderProtocol {
                 switch segment {
                 case .dogs:
                     guard let dog = dogs.last else { return loadDogs() }
-                    outputSubject.value = output(withState: .dogs(image: dog))
+                    outputSubject.send(self.output(withState: .dogs(image: dog)))
                 case .cats:
                     guard let fact = cats.last else { return loadCats() }
-                    outputSubject.value = output(withState: .cats(fact: fact))
+                    outputSubject.send(self.output(withState: .cats(fact: fact)))
                 }
             }
             .store(in: &viewsSubscriptions)

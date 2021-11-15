@@ -7,11 +7,10 @@
 
 import Foundation
 import Combine
-import UIKit
 
 protocol NetworkerProtocol {
     func request<T: Decodable>(_ responseType: T.Type, url: URL) -> AnyPublisher<T, Error>
-    func request(imageWith url: URL) -> AnyPublisher<UIImage, Error>
+    func request(dataWith url: URL) -> AnyPublisher<Data, Error>
 }
 
 class Networker: NetworkerProtocol {
@@ -26,10 +25,9 @@ class Networker: NetworkerProtocol {
             .eraseToAnyPublisher()
     }
     
-    func request(imageWith url: URL) -> AnyPublisher<UIImage, Error> {
+    func request(dataWith url: URL) -> AnyPublisher<Data, Error> {
         session.dataTaskPublisher(for: url)
             .map(\.data)
-            .compactMap(UIImage.init(data:))
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }

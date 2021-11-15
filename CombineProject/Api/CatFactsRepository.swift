@@ -13,7 +13,7 @@ protocol CatFactsRepositoryProtocol {
 }
 
 class CatFactsRepository {
-        
+    
     private let networker: NetworkerProtocol
     
     init(networker: NetworkerProtocol) {
