@@ -9,21 +9,46 @@
 /* Begin PBXBuildFile section */
 		DE8A8026273586C4009A5B63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8025273586C4009A5B63 /* AppDelegate.swift */; };
 		DE8A8028273586C4009A5B63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8027273586C4009A5B63 /* SceneDelegate.swift */; };
-		DE8A802A273586C4009A5B63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8029273586C4009A5B63 /* ViewController.swift */; };
+		DE8A802A273586C4009A5B63 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8029273586C4009A5B63 /* AnimalsViewController.swift */; };
 		DE8A802D273586C4009A5B63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A802B273586C4009A5B63 /* Main.storyboard */; };
 		DE8A802F273586C5009A5B63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8A802E273586C5009A5B63 /* Assets.xcassets */; };
 		DE8A8032273586C5009A5B63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE8A8030273586C5009A5B63 /* LaunchScreen.storyboard */; };
+		DE8A803A2735F19C009A5B63 /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A80392735F19C009A5B63 /* Networker.swift */; };
+		DE8A803C27360273009A5B63 /* CatFactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A803B27360273009A5B63 /* CatFactsRepository.swift */; };
+		DE8A803F27360F88009A5B63 /* DogImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A803E27360F88009A5B63 /* DogImagesRepository.swift */; };
+		DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804127361207009A5B63 /* NavigationBar.swift */; };
+		DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */; };
+		DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */; };
+		DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */; };
+		DE8A804D273700EA009A5B63 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */; };
+		DE8A80502737074F009A5B63 /* AnimalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A804F2737074F009A5B63 /* AnimalsView.swift */; };
+		DE8A805327370875009A5B63 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE8A805227370875009A5B63 /* SnapKit */; };
+		DE8A805527371C35009A5B63 /* CombineCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A805427371C35009A5B63 /* CombineCompatible.swift */; };
+		DE8A80592738426C009A5B63 /* AnimalsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A80582738426C009A5B63 /* AnimalsModels.swift */; };
+		DE8A805C27418FBC009A5B63 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A805B27418FBC009A5B63 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DE8A8022273586C4009A5B63 /* CombineProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A8025273586C4009A5B63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8A8027273586C4009A5B63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE8A8029273586C4009A5B63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE8A8029273586C4009A5B63 /* AnimalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		DE8A802C273586C4009A5B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE8A802E273586C5009A5B63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8A8031273586C5009A5B63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8A8033273586C5009A5B63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8A80392735F19C009A5B63 /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		DE8A803B27360273009A5B63 /* CatFactsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsRepository.swift; sourceTree = "<group>"; };
+		DE8A803E27360F88009A5B63 /* DogImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImagesRepository.swift; sourceTree = "<group>"; };
+		DE8A804127361207009A5B63 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsAssembly.swift; sourceTree = "<group>"; };
+		DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsProvider.swift; sourceTree = "<group>"; };
+		DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
+		DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
+		DE8A804F2737074F009A5B63 /* AnimalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsView.swift; sourceTree = "<group>"; };
+		DE8A805427371C35009A5B63 /* CombineCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCompatible.swift; sourceTree = "<group>"; };
+		DE8A80582738426C009A5B63 /* AnimalsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsModels.swift; sourceTree = "<group>"; };
+		DE8A805B27418FBC009A5B63 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8A805327370875009A5B63 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +82,67 @@
 		DE8A8024273586C4009A5B63 /* CombineProject */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A804327361222009A5B63 /* Animals */,
+				DE8A8040273611D6009A5B63 /* Components */,
+				DE8A803D27360F56009A5B63 /* Api */,
+				DE8A805A27418FAF009A5B63 /* Extensions */,
 				DE8A8025273586C4009A5B63 /* AppDelegate.swift */,
 				DE8A8027273586C4009A5B63 /* SceneDelegate.swift */,
-				DE8A8029273586C4009A5B63 /* ViewController.swift */,
 				DE8A802B273586C4009A5B63 /* Main.storyboard */,
 				DE8A802E273586C5009A5B63 /* Assets.xcassets */,
 				DE8A8030273586C5009A5B63 /* LaunchScreen.storyboard */,
 				DE8A8033273586C5009A5B63 /* Info.plist */,
 			);
 			path = CombineProject;
+			sourceTree = "<group>";
+		};
+		DE8A803D27360F56009A5B63 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A80392735F19C009A5B63 /* Networker.swift */,
+				DE8A803B27360273009A5B63 /* CatFactsRepository.swift */,
+				DE8A803E27360F88009A5B63 /* DogImagesRepository.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		DE8A8040273611D6009A5B63 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A804127361207009A5B63 /* NavigationBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DE8A804327361222009A5B63 /* Animals */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A8045273612AC009A5B63 /* AnimalsAssembly.swift */,
+				DE8A8029273586C4009A5B63 /* AnimalsViewController.swift */,
+				DE8A8047273612E9009A5B63 /* AnimalsProvider.swift */,
+				DE8A804F2737074F009A5B63 /* AnimalsView.swift */,
+				DE8A80582738426C009A5B63 /* AnimalsModels.swift */,
+			);
+			path = Animals;
+			sourceTree = "<group>";
+		};
+		DE8A80492736F81A009A5B63 /* UIKit+Combine */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A805427371C35009A5B63 /* CombineCompatible.swift */,
+				DE8A804A2736F835009A5B63 /* UIBarButtonItem+Combine.swift */,
+				DE8A804C273700EA009A5B63 /* UIControl+Combine.swift */,
+			);
+			path = "UIKit+Combine";
+			sourceTree = "<group>";
+		};
+		DE8A805A27418FAF009A5B63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A80492736F81A009A5B63 /* UIKit+Combine */,
+				DE8A805B27418FBC009A5B63 /* UIView+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +161,9 @@
 			dependencies = (
 			);
 			name = CombineProject;
+			packageProductDependencies = (
+				DE8A805227370875009A5B63 /* SnapKit */,
+			);
 			productName = CombineProject;
 			productReference = DE8A8022273586C4009A5B63 /* CombineProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +192,9 @@
 				Base,
 			);
 			mainGroup = DE8A8019273586C4009A5B63;
+			packageReferences = (
+				DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DE8A8023273586C4009A5B63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE8A802A273586C4009A5B63 /* ViewController.swift in Sources */,
+				DE8A80502737074F009A5B63 /* AnimalsView.swift in Sources */,
+				DE8A803F27360F88009A5B63 /* DogImagesRepository.swift in Sources */,
+				DE8A805527371C35009A5B63 /* CombineCompatible.swift in Sources */,
+				DE8A803A2735F19C009A5B63 /* Networker.swift in Sources */,
+				DE8A802A273586C4009A5B63 /* AnimalsViewController.swift in Sources */,
+				DE8A80592738426C009A5B63 /* AnimalsModels.swift in Sources */,
 				DE8A8026273586C4009A5B63 /* AppDelegate.swift in Sources */,
+				DE8A804227361207009A5B63 /* NavigationBar.swift in Sources */,
+				DE8A8046273612AC009A5B63 /* AnimalsAssembly.swift in Sources */,
+				DE8A805C27418FBC009A5B63 /* UIView+.swift in Sources */,
+				DE8A804D273700EA009A5B63 /* UIControl+Combine.swift in Sources */,
+				DE8A804B2736F835009A5B63 /* UIBarButtonItem+Combine.swift in Sources */,
+				DE8A8048273612E9009A5B63 /* AnimalsProvider.swift in Sources */,
+				DE8A803C27360273009A5B63 /* CatFactsRepository.swift in Sources */,
 				DE8A8028273586C4009A5B63 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +456,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE8A805227370875009A5B63 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE8A805127370875009A5B63 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE8A801A273586C4009A5B63 /* Project object */;
 }
