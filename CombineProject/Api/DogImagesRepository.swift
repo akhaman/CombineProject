@@ -9,11 +9,11 @@ import Foundation
 import Combine
 import UIKit
 
-protocol DogImageUrlsRepositoryProtocol {
+protocol DogImagesRepositoryProtocol {
     func getDogImage() -> AnyPublisher<UIImage, Error>
 }
 
-class DogImageUrlsRepository {
+class DogImagesRepository {
     
     private let networker: NetworkerProtocol
     
@@ -24,19 +24,20 @@ class DogImageUrlsRepository {
 
 // MARK: - DogImageUrlsRepositoryProtocol
 
-extension DogImageUrlsRepository: DogImageUrlsRepositoryProtocol {
+extension DogImagesRepository: DogImagesRepositoryProtocol {
     
     func getDogImage() -> AnyPublisher<UIImage, Error> {
         networker.request(Dog.self, url: URL(string: "https://dog.ceo/api/breeds/image/random")!)
             .map(\.url)
-            .flatMap { [unowned self] in networker.request(imageWith: $0) }
+            .flatMap { [unowned self] in networker.request(dataWith: $0) }
+            .compactMap(UIImage.init(data:))
             .eraseToAnyPublisher()
     }
 }
 
 // MARK: - Response Model
 
-extension DogImageUrlsRepository {
+extension DogImagesRepository {
     private struct Dog: Decodable {
         let url: URL
         

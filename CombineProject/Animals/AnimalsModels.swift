@@ -28,7 +28,7 @@ enum Animals {
     }
     
     enum ContentState {
-        case initial
+//        case initial
         case loading
         case cats(fact: String)
         case dogs(image: UIImage)

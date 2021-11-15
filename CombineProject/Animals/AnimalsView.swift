@@ -167,10 +167,6 @@ extension AnimalsView {
     func update(contentState: Animals.ContentState) {
         
         switch contentState {
-        case .initial:
-            contentLabel.hide()
-            contentImageView.hide()
-            loader.stopAnimating()
         case .loading:
             contentLabel.hide()
             contentImageView.hide()

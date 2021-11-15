@@ -14,7 +14,7 @@ class AnimalsAssembly {
         
         let provider = AnimalsProvider(
             catFactsRepository: CatFactsRepository(networker: networker),
-            dogImageUrsRepository: DogImageUrlsRepository(networker: networker)
+            dogImagesRepository: DogImagesRepository(networker: networker)
         )
         
         let viewController = AnimalsViewController(provider: provider)

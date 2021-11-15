@@ -13,7 +13,7 @@ import Combine
 extension UIBarButtonItem: CombineCompatible {}
 
 extension CombineCompatible where Self: UIBarButtonItem {
-  
+    
     var publisher: Publisher {
         Publisher(item: self)
     }
@@ -21,21 +21,21 @@ extension CombineCompatible where Self: UIBarButtonItem {
     init(
         title: String,
         style: Style = .plain,
-        storeIn cancellables: inout Set<AnyCancellable>,
+        storeIn cancellableSet: inout Set<AnyCancellable>,
         action: @escaping () -> Void
     ) {
         self.init(title: title, style: style, target: nil, action: nil)
-        publisher.sink { _ in action() }.store(in: &cancellables)
+        publisher.sink { _ in action() }.store(in: &cancellableSet)
     }
     
     init(
         image: UIImage,
         style: Style = .plain,
-        storeIn cancellables: inout Set<AnyCancellable>,
+        storeIn cancellableSet: inout Set<AnyCancellable>,
         action: @escaping () -> Void
     ) {
         self.init(image: image, style: style, target: nil, action: nil)
-        publisher.sink { _ in action() }.store(in: &cancellables)
+        publisher.sink { _ in action() }.store(in: &cancellableSet)
     }
 }
 
@@ -83,7 +83,7 @@ extension UIBarButtonItem {
         }
         
         func cancel() {
-           subscriber = nil
+            subscriber = nil
             item.target = nil
             item.action = nil
         }
